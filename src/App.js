@@ -18,7 +18,7 @@ function App() {
      <div>
         <Main />
       </div>
-      <div>
+      <div className='aside'>
         <h1>This Weeks Specials!</h1>
         <button>Online Menu</button>
         <Aside1 />

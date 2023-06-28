@@ -1,3 +1,92 @@
+ul {
+  line-height: 100px;
+  display: flex;
+  color: black;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  list-style: none;
+  width: all;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  height: 7rem;
+
+}
+
+li {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 150rem;
+
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  background-color: #495e57;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr; /* First column for content, second column for image */
+  align-items: center; /* Align items vertically */
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: medium;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  }
+
+.main {
+  grid-column-start: 1; /* Position the content in the first column */
+}
+
+.main button {
+  grid-column: 1 / span 2; /* Span across both columns */
+  justify-self: start; /* Align the button to the left */
+}
+main > div > h1 {
+  color: #f4ce14;
+  font-size: 64px;
+  font-family: Markazi;
+  font-weight: medium;
+}
+
+main > div > h2 {
+  font-size: 40px;
+  font-family: Markazi;
+  font-weight: regular;
+}
+main > div> button {
+  border-radius: 16px;
+  background-color: #f4ce14;
+  width: 195px;
+  height: 46px;
+  font-size: 18px;
+}
+
+.food {
+  position: relative;
+  width: 300px; /* Set the width of the frame */
+  height: 200px; /* Set the height of the frame */
+}
+
+.food img {
+  position: absolute;
+  top: 70%; /* Adjust the vertical position */
+  left: 100%; /* Adjust the horizontal position */
+  transform: translate(-50%, -50%); /* Center the image */
+}
+
+.aside > h1 {
+  font-size: 64px;
+  font-family: Markazi;
+  font-weight: medium;
+}
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
