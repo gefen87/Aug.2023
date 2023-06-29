@@ -5,7 +5,7 @@ const Aside1 = () => {
     return (
         <aside className="salad">
             <div>
-                <img src={salad} alt="salad"/>
+                <img src={salad} alt="salad" width={300}/>
                 <h2>Greek Salad</h2>
                 <h3>12.99$</h3>
             </div>

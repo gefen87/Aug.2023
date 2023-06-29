@@ -21,9 +21,13 @@ function App() {
       <div className='aside'>
         <h1>This Weeks Specials!</h1>
         <button>Online Menu</button>
-        <Aside1 />
-        <Aside2 />
-        <Aside3 />
+        <div className='part'
+        style={{display:"flex", width: "200px", height: "100px",
+        margin:"12rem", gap: "5rem", alignItems: "center"}}>
+          <Aside1 />
+          <Aside2 />
+          <Aside3 />
+        </div>
       </div>
       <div>
         <Footer />
