@@ -23,7 +23,8 @@ function App() {
         <button>Online Menu</button>
         <div className='part'
         style={{display:"flex", width: "200px", height: "100px",
-        margin:"12rem", gap: "5rem", alignItems: "center"}}>
+        margin:"12rem", gap: "5rem", position:"relative", left: "50%"
+        }}>
           <Aside1 />
           <Aside2 />
           <Aside3 />
