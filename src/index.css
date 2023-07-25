@@ -4,7 +4,7 @@
   text-align: center;
 }
 
-ul {
+Nav ul {
   line-height: 120px;
   display: flex;
   color: black;
@@ -15,9 +15,10 @@ ul {
   height: 7rem;
   position: relative;
   left: 25%;
+  right: 25%;
 }
 
-li {
+Nav li {
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -28,6 +29,7 @@ li {
   display: flex;
   position: relative;
   left: 27%;
+  right: 27%;
 }
 
 main {
@@ -41,6 +43,7 @@ main {
   margin: 50px;
   position: relative;
   left: 27%;
+  right: 27%
   }
 
 
@@ -98,6 +101,7 @@ aside {
   font-weight: medium;
   position: relative;
   left: 25%;
+  right: 25%;
 }
 
 .aside >  button {
@@ -110,8 +114,59 @@ aside {
   left: 25%;
 }
 
+/* Add this CSS to your stylesheet (e.g., App.css) or use inline styles */
 
+.footer {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr; /* Logo takes the first column, other columns share equal space */
+  gap: 20px; /* Adds some space between the columns */
+  padding: 20px; /* Optional: Add some padding around the content */
+  position: relative;
+  left: 25%;
+  right: 25%;
+}
 
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  position: relative;
+  left: 25%;
+  right: 25%;
+}
+
+.footer h2 {
+  text-align: center;
+  position: relative;
+  left: 25%;
+  right: 25%;
+  word-break: break-word
+}
+
+.footer img {
+  position: relative;
+  width: 400px;
+  height: 200px;
+}
+
+.footer li {
+  position: relative;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  left: 27%;
+  right: 27%;
+}
+
+footer ul {
+  line-height: 1.5rem;
+  color: black;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  list-style: none;
+  height: 1rem;
+  text-align: center;
+}
 
 body {
   display: flex;
