@@ -3,8 +3,10 @@ import logo from './lemon-logo.png';
 const Footer = () => {
     return (
         <footer className="footer">
-            <img src={logo} alt="logo"/>
-            <div>
+            <div className="footer-column">
+                <img src={logo} alt="logo"/>
+            </div>
+            <div className="footer-column">
                 <h2>Doormat Navigation</h2>
                 <ul>
                     <li><a href="url">Home</a></li>
@@ -15,7 +17,7 @@ const Footer = () => {
                     <li><a href="url">Login</a></li>
                 </ul>
             </div>
-            <div>
+            <div className="footer-column">
                 <h2>Contact</h2>
                 <ul>
                     <li><a href="url">Address</a></li>
@@ -23,7 +25,7 @@ const Footer = () => {
                     <li><a href="url">e-Mail</a></li>
                 </ul>
             </div>
-            <div>
+            <div className="footer-column">
                 <h2>Social Media Links</h2>
                 <ul>
                     <li><a href="url">Facebook</a></li>
