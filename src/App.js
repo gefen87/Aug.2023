@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Head from './components/Head';
-import Nav from './components/Nav.js';
-import Main from './components/Main.js';
+import Nav from './components/Nav';
+import Main from './components/Main';
 import Aside1 from './components/Aside1';
 import Aside2 from './components/Aside2';
 import Aside3 from './components/Aside3';
@@ -10,20 +11,21 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <div>
-        <Head />
-      </div>
-      <div>
-        <Nav />
-      </div>
-      <div>
-        <Main />
-      </div>
-      <div className='aside'>
-        <h1>This Weeks Specials!</h1>
-        <button>Online Menu</button>
-        <div className='part'
+    <Router>
+      <div className="App">
+        <div>
+          <Head />
+        </div>
+        <div>
+          <Nav />
+        </div>
+        <div>
+          <Main />
+        </div>
+        <div className='aside'>
+          <h1>This Weeks Specials!</h1>
+          <button>Online Menu</button>
+          <div className='part'
           style={{
             display: "flex",
             width: "200px",
@@ -32,17 +34,17 @@ function App() {
             gap: "5rem",
             position: "relative",
             left: "50%"
-          }}
-        >
-          <Aside1 />
-          <Aside2 />
-          <Aside3 />
+          }}>
+              <Aside1 />
+              <Aside2 />
+              <Aside3 />
+          </div>
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
-      <div>
-        <Footer />
-      </div>
-    </div>
+    </Router>
   );
 }
 
