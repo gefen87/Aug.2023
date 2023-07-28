@@ -1,0 +1,9 @@
+.button-style {
+    border-radius: 16px;
+    background-color: #f4ce14;
+    width: 195px;
+    height: 46px;
+    font-size: 18px;
+    position: relative;
+    left: 25%;
+  }
