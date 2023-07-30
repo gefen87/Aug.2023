@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BookingForm from './BookingForm';
 import ConfirmedBooking from './ConfirmedBooking';
-import { fetchData } from './api';
-
-const API_ENDPOINT = 'https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js';
 
 const ReservationPage = () => {
   const [availableTimes, setAvailableTimes] = useState([]);
@@ -12,17 +9,16 @@ const ReservationPage = () => {
   const [submitMessage, setSubmitMessage] = useState('');
 
   useEffect(() => {
-    const fetchTimes = async () => {
-      const data = await fetchData();
-      setAvailableTimes(data.availableTimes);
-    };
-
-    fetchTimes();
+    fetch('https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js') // URL to the API endpoint
+      .then((res) => res.json())
+      .then((data) => setAvailableTimes(data.availableTimes))
+      .catch((err) => console.error(err));
   }, []);
 
   const submitForm = async (formData) => {
     try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+      setSubmitStatus('loading'); // set loading status
+      const response = await fetch('https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,33 +27,29 @@ const ReservationPage = () => {
       });
 
       if (response.ok) {
-        const jsonResponse = await response.json();
-        console.log(jsonResponse);
         setBookingConfirmed(true);
-        setSubmitStatus(true);
+        setSubmitStatus('success'); // set success status
         setSubmitMessage('Reservation successfully submitted!');
       } else {
-        setSubmitStatus(false);
+        setSubmitStatus('error'); // set error status
         setSubmitMessage('Failed to submit reservation. Please try again.');
       }
     } catch (error) {
-      console.error('Error:', error);
-      setSubmitStatus(false);
+      setSubmitStatus('error'); // set error status
       setSubmitMessage(`Error: ${error.message}`);
     }
   };
-
 
   if (isBookingConfirmed) {
     return <ConfirmedBooking />;
   } else {
     return (
       <div>
-        <BookingForm availableTimes={availableTimes} submitForm={submitForm} />
+        <BookingForm availableTimes={availableTimes} submitForm={submitForm} submitStatus={submitStatus} />
         {submitStatus !== null && <p>{submitMessage}</p>}
       </div>
     );
-  };
+  }
 };
 
 export default ReservationPage;

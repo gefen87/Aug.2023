@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './BookingForm.css';
 
-const BookingForm = ({ availableTimes, submitForm }) => {
+const BookingForm = ({ availableTimes, submitForm, submitStatus }) => {
   const initialFormState = {
     name: '',
     phoneNumber: '',
@@ -16,7 +16,6 @@ const BookingForm = ({ availableTimes, submitForm }) => {
   const [formValid, setFormValid] = useState(false);
 
   useEffect(() => {
-    // Check if form is valid whenever formData changes
     setFormValid(
       formData.name !== '' &&
       formData.email.includes('@') &&
@@ -37,7 +36,6 @@ const BookingForm = ({ availableTimes, submitForm }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Call the submitForm function and pass the form data
     if (formValid) {
       submitForm(formData);
     }
@@ -91,10 +89,11 @@ const BookingForm = ({ availableTimes, submitForm }) => {
         </select>
       </div>
       <div className="button-container">
-        {/* Use a button instead of an input for form submission */}
         <button type="submit" disabled={!formValid} aria-disabled={!formValid}>Make Your reservation</button>
       </div>
-
+      {submitStatus === 'loading' && <p>Submitting your reservation...</p>}
+      {submitStatus === 'success' && <p>Your reservation has been made!</p>}
+      {submitStatus === 'error' && <p>Something went wrong. Please try again.</p>}
     </form>
   );
 };
