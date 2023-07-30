@@ -17,11 +17,13 @@ function App() {
         <div>
           <Nav />
         </div>
+        <div className='container'>
         <Routes>
-          <Route path="/" element={<HomePage />} /> {/* Use HomePage instead of Main */}
+          <Route path="/" element={<HomePage />} />
           <Route path="/booking" element={<BookingPage />} />
           <Route path="/confirmation" element={<ConfirmedBooking />} />
         </Routes>
+        </div>
         <div>
           <Footer />
         </div>
